@@ -1,0 +1,165 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type VehicleOwnerName {
+  firstName: String!
+  middleName: String!
+  lastName: String!
+}
+
+type VehicleOwnerAddressInfo {
+  address1: String!
+  address2: String!
+  addressBuilding: String!
+  addressStreet: String!
+  addressPlace: String!
+  addressCity: String!
+  addressState: String!
+  addressCountry: String!
+  addressPincode: String!
+  addressLat: Float!
+  addressLong: Float!
+}
+
+type VehicleOwner {
+  _id: ID
+  roleId: String!
+  ownerPublicId: String!
+  name: VehicleOwnerName!
+  dob: DateTime!
+  photo: String!
+  password: String!
+  passwordGenOn: DateTime!
+  email: String!
+  phoneNumber: Float!
+  doj: DateTime!
+  isBussiness: Boolean!
+  businessName: String!
+  isActive: Boolean!
+  isVerified: Boolean!
+  pan: String!
+  panDocPath: String!
+  address: VehicleOwnerAddressInfo!
+  createdOn: DateTime
+  lastUpdatedOn: DateTime
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type JwtTokenModel {
+  accessToken: String!
+  refreshToken: String!
+}
+
+type Query {
+  getVehicleOwnersList: [VehicleOwner!]!
+  getVehicleOwnerById(vehicleOwnerId: String!): VehicleOwner!
+  vehicleOwnerLogin(payload: LoginDto!): JwtTokenModel!
+}
+
+input LoginDto {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  addVehicleOwnerDetails(payload: CreateVehicleOwnerDto!): VehicleOwner!
+  editVehicleOwnerDetails(payload: UpdateVehicleOwnerDto!): VehicleOwner!
+  disableVehicleOwnerById(vehicleOwnerId: String!): VehicleOwner!
+  logDetailsInFile(payload: CreateLogDto!): String!
+}
+
+input CreateVehicleOwnerDto {
+  roleId: String!
+  ownerPublicId: String
+  name: CreateVehicleOwnerNameDto!
+  dob: DateTime!
+  photo: String!
+  password: String!
+  passwordGenOn: DateTime
+  email: String!
+  phoneNumber: Float!
+  doj: DateTime!
+  isBussiness: Boolean!
+  businessName: String!
+  isActive: Boolean
+  isVerified: Boolean
+  pan: String!
+  panDocPath: String!
+  address: CreateVehicleOwnerAddressDto!
+  createdOn: DateTime
+  lastUpdatedOn: DateTime
+}
+
+input CreateVehicleOwnerNameDto {
+  firstName: String!
+  middleName: String!
+  lastName: String!
+}
+
+input CreateVehicleOwnerAddressDto {
+  address1: String!
+  address2: String!
+  addressBuilding: String!
+  addressStreet: String!
+  addressPlace: String!
+  addressCity: String!
+  addressState: String!
+  addressCountry: String!
+  addressPincode: String!
+  addressLat: Float!
+  addressLong: Float!
+}
+
+input UpdateVehicleOwnerDto {
+  _id: String!
+  roleId: String
+  name: UpdateVehicleOwnerNameDto
+  dob: DateTime
+  photo: String
+  password: String
+  passwordGenOn: DateTime
+  email: String
+  phoneNumber: Float
+  doj: DateTime
+  isBussiness: Boolean
+  businessName: String
+  isActive: Boolean
+  isVerified: Boolean
+  pan: String
+  panDocPath: String
+  address: UpdateVehicleOwnerAddressDto
+  createdOn: DateTime
+  lastUpdatedOn: DateTime
+}
+
+input UpdateVehicleOwnerNameDto {
+  firstName: String
+  middleName: String
+  lastName: String
+}
+
+input UpdateVehicleOwnerAddressDto {
+  address1: String
+  address2: String
+  addressBuilding: String
+  addressStreet: String
+  addressPlace: String
+  addressCity: String
+  addressState: String
+  addressCountry: String
+  addressPincode: String
+  addressLat: Float
+  addressLong: Float
+}
+
+input CreateLogDto {
+  message: String!
+  stack: String!
+  status: String!
+  methodName: String!
+}

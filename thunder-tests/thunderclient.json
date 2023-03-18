@@ -1,0 +1,933 @@
+[
+  {
+    "_id": "7ddf4ee6-49a8-4aad-a580-38dd98253f02",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "f3d9eda1-62b2-4fe9-b040-589a78061497",
+    "name": "authenticateCustomer",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-12T13:50:58.858Z",
+    "modified": "2022-08-12T13:51:42.899Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation authenticateCustomer($payload: CustomerAuthDto!) {\n    authenticateCustomer (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n     \t\taccessToken\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"user\":\"dev.lijojohn@gmail.com\",\n    \"userIdType\": \"email\",\n    \"password\": \"Ww#123456\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "811a408d-38a9-462f-b6e5-f20b726a1407",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "f3d9eda1-62b2-4fe9-b040-589a78061497",
+    "name": "registerCustomer",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-08-12T13:59:48.209Z",
+    "modified": "2022-08-12T15:55:05.426Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation registerCustomer($payload: RegisterCustomerDto!) {\n    registerCustomer (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"name\":{\n    \"firstName\":\"Lijo\",\n    \"middleName\":\"\",\n    \"lastName\":\"John\"\n    },\n    \"password\":\"Ww#123456\",\n    \"email\":\"dev.lijojohn@gmail.com\",\n    \"phoneNumber\":\"9876543210\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "076985fc-25bf-40a2-837c-453aa3c22041",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "f3d9eda1-62b2-4fe9-b040-589a78061497",
+    "name": "verifyCustomer-EmailOTP",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-08-12T14:01:49.688Z",
+    "modified": "2022-08-12T16:04:02.755Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation verifyCustomer($payload: VerifyCustomerDto!) {\n    verifyCustomer (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"user\":\"c6950428-d810-4816-b223-a5201f59bb0d\",\n    \"userIdType\": \"pid\",\n  \t\"token\": \"065272\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "4b622051-e09f-4b1c-ae04-cce42fa21e25",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "f3d9eda1-62b2-4fe9-b040-589a78061497",
+    "name": "requestCustomerOTPAuth",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 70000,
+    "created": "2022-08-12T14:03:29.461Z",
+    "modified": "2022-08-12T16:02:30.561Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation requestCustomerOTPAuth($payload: RequestOTPAuthDto!) {\n    requestCustomerOTPAuth (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"phoneNumber\":\"9876543210\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "3c6626fb-1ab1-4c28-bd10-4b7d9c13b29e",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "43e8835a-8fdd-430f-9c0a-519c022a640a",
+    "name": "addCustomerAddress",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 90000,
+    "created": "2022-08-12T14:06:12.173Z",
+    "modified": "2022-08-15T09:33:27.231Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addCustomerAddress($payload: CustomerAddressDto!) {\n    addCustomerAddress (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"address_title\":\"title4\",\n    \"address_subcategory\":\"home\",\n    \"address_1\":\"address_1\",\n    \"address_2\": \"address_2\",\n    \"address_building\": \"address_building\",\n    \"address_street\": \"address_street\",\n    \"address_place\": \"address_place\",\n    \"address_city\": \"address_city\",\n    \"address_state\": \"address_state\",\n    \"address_country\": \"address_country\",\n    \"address_pincode\": \"address_pincode\",\n    \"address_lat\": -9.9827,\n    \"address_long\": 76.2779,\n    \"verification_doc\": \"verification_doc\",\n    \"isPrimary\": false\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "ee5a125c-a454-4d0b-a96e-e98ef9595db9",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "43e8835a-8fdd-430f-9c0a-519c022a640a",
+    "name": "getCustomerAllAddresses",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 100000,
+    "created": "2022-08-12T14:09:06.086Z",
+    "modified": "2022-08-15T09:33:18.226Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "query getCustomerAllAddresses{\n    getCustomerAllAddresses{\n        _id\n      \taddress_title\n      \taddress_1\n      \taddress_2\n      \taddress_building\n      \taddress_street\n      \taddress_place\n      \taddress_city\n      \taddress_state\n      \taddress_country\n      \taddress_pincode\n      \taddress_subcategory\n      \tlocation{\n          coordinates\n        }\n    }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "b373671f-e97b-4b66-b55c-e7d4fd76a8f9",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "43e8835a-8fdd-430f-9c0a-519c022a640a",
+    "name": "deleteCustomerAddressById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 110000,
+    "created": "2022-08-12T14:10:43.406Z",
+    "modified": "2022-08-12T16:27:07.507Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation deleteCustomerAddressById ($customerAddressId: String!) {\n    deleteCustomerAddressById (customerAddressId: $customerAddressId) {\n        status\n    \t\tmessage\n    }\n}",
+        "variables": "{\n    \"customerAddressId\": \"62f67eeef5f9b2e6598c9ebb\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "1b1f414e-9964-4c5b-8ad7-0204bd6a2b7d",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "43e8835a-8fdd-430f-9c0a-519c022a640a",
+    "name": "updateCustomerAddressById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 120000,
+    "created": "2022-08-12T14:12:17.187Z",
+    "modified": "2022-08-15T09:32:45.076Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation updateCustomerAddressById($customerAddressId: String!,$payload: CustomerAddressDto!) {\n    updateCustomerAddressById (customerAddressId:$customerAddressId,payload: $payload) {\n    \t\taddress_title\n      \taddress_1\n      \taddress_2\n      \taddress_building\n      \taddress_street\n      \taddress_place\n      \taddress_city\n      \taddress_state\n      \taddress_country\n      \taddress_pincode\n      \taddress_subcategory\n      \tlocation{\n          coordinates\n        }\n    }\n}",
+        "variables": "{\n  \"customerAddressId\": \"62f67f98f5f9b2e6598c9ebf\",\n  \"payload\": {\n    \"address_title\":\"NEWTITLEchange\",\n    \"address_subcategory\":\"home\",\n    \"address_1\":\"NEWaddress_1change\",\n    \"address_2\": \"NEWaddress_2\",\n    \"address_building\": \"NEWaddress_building\",\n    \"address_street\": \"NEWaddress_street\",\n    \"address_place\": \"NEWaddress_place\",\n    \"address_city\": \"NEWaddress_city\",\n    \"address_state\": \"address_state\",\n    \"address_country\": \"NEWaddress_country\",\n    \"address_pincode\": \"address_pincode\",\n    \"address_lat\": -20.9827,\n    \"address_long\": 20.2779,\n    \"verification_doc\": \"NEWverification_doc\",\n    \"isPrimary\": true\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "e17e2778-b49d-4006-9be8-44853d846719",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "43e8835a-8fdd-430f-9c0a-519c022a640a",
+    "name": "setAsCustomerPrimaryAddress",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 130000,
+    "created": "2022-08-12T14:13:43.142Z",
+    "modified": "2022-08-15T09:32:59.156Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation setAsCustomerPrimaryAddress ($customerAddressId: String!) {\n    setAsCustomerPrimaryAddress (customerAddressId: $customerAddressId) {\n        address_title\n      \taddress_1\n      \taddress_2\n      \taddress_building\n      \taddress_street\n      \taddress_place\n      \taddress_city\n      \taddress_state\n      \taddress_country\n      \taddress_pincode\n      \taddress_subcategory\n      \tlocation{\n          coordinates\n        }\n    }\n}",
+        "variables": "{\n    \"customerAddressId\": \"62f67f98f5f9b2e6598c9ebf\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "785fb646-6c66-4d61-8389-737405525809",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "5f6b2ae5-cd1d-4b9b-8be7-37f30462a798",
+    "name": "addCustomerContact",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 150000,
+    "created": "2022-08-12T14:15:40.223Z",
+    "modified": "2022-08-15T09:36:50.434Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addCustomerContact($payload: CustomerContactDto!) {\n    addCustomerContact (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"contact_title\": \"contact_title9\",\n    \"contact_type\": \"email\",\n    \"contact_subcategory\": \"home\",\n    \"email\": \"lijo.john4u@gmail.com\",\n    \"isPrimary\": false\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "d516b71f-c658-4b5c-9553-944c5170a5c0",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "8a9594fa-affb-406d-a593-afe29c00be28",
+    "name": "getCustomerProfile",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 160000,
+    "created": "2022-08-12T14:17:24.158Z",
+    "modified": "2022-08-12T16:14:08.856Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "query getCustomerProfile{\n    getCustomerProfile{\n        email\n    }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "5178f96c-b5d3-4b11-9da5-f1256d8186bf",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "8a9594fa-affb-406d-a593-afe29c00be28",
+    "name": "getCustomerById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 170000,
+    "created": "2022-08-12T14:18:23.203Z",
+    "modified": "2022-08-12T16:23:27.945Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "query getCustomerProfilebyID ($customerId: String!) {\n    getCustomerProfilebyID (customerId: $customerId) {\n        email\n    }\n}",
+        "variables": "{\n    \"customerId\":\"62f677d9966b3f3132bbf9b1\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "169e5dd3-857a-4e2b-8df6-2dd7e4e10149",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "f3d9eda1-62b2-4fe9-b040-589a78061497",
+    "name": "verifyCustomer-PhoneOTP",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 180000,
+    "created": "2022-08-12T16:05:12.527Z",
+    "modified": "2022-08-12T16:06:18.309Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation verifyCustomer($payload: VerifyCustomerDto!) {\n    verifyCustomer (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"user\":\"9876543210\",\n    \"userIdType\": \"phone\",\n  \t\"token\": \"589544\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "f256f236-6572-4fc0-99ae-973cc29b1673",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "8a9594fa-affb-406d-a593-afe29c00be28",
+    "name": "completeCustomerProfile",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 190000,
+    "created": "2022-08-12T16:08:29.514Z",
+    "modified": "2022-08-15T09:34:37.530Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation completeCustomerProfile($payload: CustomerDto!) {\n    completeCustomerProfile (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"photo\": \"photo_path_url\",\n    \"name\":{\n    \"firstName\":\"Lijo\",\n    \"middleName\":\"\",\n    \"lastName\":\"John\"\n    },\n    \"email\":\"dev.lijojohn@gmail.com\",\n    \"phoneNumber\":\"9876543210\",\n    \"address\": {\n        \"address_title\":\"title\",\n    \t\t\"address_subcategory\":\"home\",\n    \t\t\"address_1\":\"address_1\",\n    \t\t\"address_2\": \"address_2\",\n    \t\t\"address_building\": \"address_building\",\n    \t\t\"address_street\": \"address_street\",\n    \t\t\"address_place\": \"address_place\",\n    \t\t\"address_city\": \"address_city\",\n    \t\t\"address_state\": \"address_state\",\n    \t\t\"address_country\": \"address_country\",\n        \"address_pincode\": \"address_pincode\",\n        \"address_lat\": -9.9827,\n    \t\t\"address_long\": 76.2779,\n    \t\t\"verification_doc\": \"verification_doc\",\n    \t\t\"isPrimary\": false\n  \t\t},\n    \t\"isBusiness\": true,\n    \t\"businessInfo\": {\n      \t\"business_name\": \"Sample name\",\n      \t\"gstin\": \"dscsds3223dssd\",\n      \t\"is_same_address\": false,\n      \t\"business_address\": {\n        \t\"address_title\":\"title\",\n    \t\t\t\"address_subcategory\":\"home\",\n    \t\t\t\"address_1\":\"address_1\",\n    \t\t\t\"address_2\": \"address_2\",\n    \t\t\t\"address_building\": \"address_building\",\n    \t\t\t\"address_street\": \"address_street\",\n    \t\t\t\"address_place\": \"address_place\",\n    \t\t\t\"address_city\": \"address_city\",\n    \t\t\t\"address_state\": \"address_state\",\n    \t\t\t\"address_country\": \"address_country\",\n        \t\"address_pincode\": \"address_pincode\",\n        \t\"address_lat\": -9.9827,\n    \t\t\t\"address_long\": 76.2779,\n    \t\t\t\"verification_doc\": \"verification_doc\",\n    \t\t\t\"isPrimary\": false\n      }\n    }\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "bca71267-602c-40c5-b5b4-b8db4ecb96a1",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "5f6b2ae5-cd1d-4b9b-8be7-37f30462a798",
+    "name": "updateCustomerContactById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 200000,
+    "created": "2022-08-12T16:40:26.049Z",
+    "modified": "2022-08-15T09:37:11.129Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation updateCustomerContactById($customerContactId: String!,$payload: CustomerContactDto!) {\n    updateCustomerContactById (customerContactId:$customerContactId,payload: $payload) {\n    contact_title\n    contact_type\n    contact_subcategory\n    phone_number\n    email\n    isPrimary\n    }\n}",
+        "variables": "{\n  \"customerContactId\": \"62f68243f5f9b2e6598c9ec6\",\n  \"payload\": {\n    \"contact_title\": \"contact_title\",\n    \"contact_type\": \"phone\",\n    \"contact_subcategory\": \"home\",\n    \"phone_number\": \"9876543217\",\n    \"isPrimary\": false\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "002e5e49-3253-47ad-8b63-d85b292951bc",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "5f6b2ae5-cd1d-4b9b-8be7-37f30462a798",
+    "name": "deleteCustomerContactById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 210000,
+    "created": "2022-08-12T16:43:51.328Z",
+    "modified": "2022-08-12T16:47:12.877Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation deleteCustomerContactById ($customerContactId: String!) {\n    deleteCustomerContactById (customerContactId: $customerContactId) {\n        status\n    \t\tmessage\n    }\n}",
+        "variables": "{\n    \"customerContactId\": \"62f68243f5f9b2e6598c9ec6\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "14bdc0b5-ac80-449d-9f57-ba58c1d81557",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "5f6b2ae5-cd1d-4b9b-8be7-37f30462a798",
+    "name": "getCustomerAllContacts",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 220000,
+    "created": "2022-08-12T16:48:42.605Z",
+    "modified": "2022-08-15T09:37:24.495Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "query getCustomerAllContacts{\n    getCustomerAllContacts{\n        _id\n      \tcontact_title\n    \t\tcontact_type\n    \t\tcontact_subcategory\n    \t\tphone_number\n    \t\temail\n    \t\tisPrimary\n    }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "0b8f6b45-1cc1-4acd-b442-b4a6e78a581b",
+    "colId": "40fd590e-3951-47ab-a554-25a0391576b2",
+    "containerId": "5f6b2ae5-cd1d-4b9b-8be7-37f30462a798",
+    "name": "setAsCustomerPrimaryContact",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 230000,
+    "created": "2022-08-12T17:02:55.052Z",
+    "modified": "2022-08-15T09:37:35.546Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation setAsCustomerPrimaryContact ($customerContactId: String!,$customerContactType: String!) {\n    setAsCustomerPrimaryContact (customerContactId: $customerContactId,customerContactType: $customerContactType) {\n        _id\n      \tcontact_title\n    \t\tcontact_type\n    \t\tcontact_subcategory\n    \t\tphone_number\n    \t\tisPrimary\n    }\n}",
+        "variables": "{\n    \"customerContactId\": \"62f68875b7b4dcdaa06f9ea1\",\n    \"customerContactType\": \"email\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImM2OTUwNDI4LWQ4MTAtNDgxNi1iMjIzLWE1MjAxZjU5YmIwZCIsInVzZXJJZCI6IjYyZjY3N2Q5OTY2YjNmMzEzMmJiZjliMSIsInJvbGUiOiJjdXN0b21lciIsInZlcnNpb24iOjEsInRva2VuVHlwZSI6ImFjY2Vzc1Rva2VuIiwiaWF0IjoxNjYwMzIwNDUzLCJleHAiOjE2NjA1MDA0NTN9.yi-9Qfvv4IwcYHPTp39Ilk2wjCV8hXPL2uAuGZUul1s"
+    },
+    "tests": []
+  },
+  {
+    "_id": "b640f060-eb63-47f6-8362-a64c84329359",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "b6f6e84d-eb11-4363-bdb4-febca16d5217",
+    "name": "registerVehicleOwner",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-08-12T17:53:33.350Z",
+    "modified": "2022-08-12T20:05:05.241Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation registerVehicleOwner($payload: RegisterVehicleOwnerDto!) {\n    registerVehicleOwner (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"name\":{\n    \"firstName\":\"Lijo\",\n    \"middleName\":\"\",\n    \"lastName\":\"John\"\n    },\n    \"password\":\"Ww#123456\",\n    \"email\":\"dev.lijojohn@gmail.com\",\n    \"phoneNumber\":\"9876543210\",\n    \"vehicleRegNumber\":\"KL 07 AA 2200\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "0a2d40e4-09c3-448f-8a8a-c8c64364823c",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "b6f6e84d-eb11-4363-bdb4-febca16d5217",
+    "name": "verifyVehicleOwner-Email",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-08-14T14:59:31.727Z",
+    "modified": "2022-08-14T15:00:26.703Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation verifyVehicleOwner($payload: VerifyVehicleOwnerDto!) {\n    verifyVehicleOwner (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"user\":\"c134a541-9843-4dad-920f-e4d254e05707\",\n    \"userIdType\": \"email\",\n  \t\"token\": \"475257\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "4a607d00-3556-4499-ac95-25ee45ccf963",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "b6f6e84d-eb11-4363-bdb4-febca16d5217",
+    "name": "verifyVehicleOwner-Phone",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-08-14T15:01:13.285Z",
+    "modified": "2022-08-14T15:01:56.204Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation verifyVehicleOwner($payload: VerifyVehicleOwnerDto!) {\n    verifyVehicleOwner (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"user\":\"c134a541-9843-4dad-920f-e4d254e05707\",\n    \"userIdType\": \"phone\",\n  \t\"token\": \"475257\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "b1e1a382-ae8e-4308-9b4c-87bdecec2d02",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "b6f6e84d-eb11-4363-bdb4-febca16d5217",
+    "name": "authenticateVehicleOwner",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-08-14T15:15:08.055Z",
+    "modified": "2022-08-14T15:15:56.674Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation authenticateVehicleOwner($payload: VehicleOwnerAuthDto!) {\n    authenticateVehicleOwner (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n     \t\taccessToken\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"user\":\"dev.lijojohn@gmail.com\",\n    \"userIdType\": \"email\",\n    \"password\": \"Ww#123456\"\n  }\n}"
+      }
+    },
+    "tests": []
+  },
+  {
+    "_id": "39f37f42-40bc-4f62-a384-e32ad51dfe88",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "ab867941-c4e7-44b3-8894-6b3738a3ac80",
+    "name": "addVehicleOwnerAddress",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 90000,
+    "created": "2022-08-15T10:30:08.288Z",
+    "modified": "2022-08-15T10:31:06.785Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addVehicleOwnerAddress($payload: VehicleAddressDto!) {\n    addVehicleOwnerAddress (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"address_title\":\"title\",\n    \"address_subcategory\":\"home\",\n    \"address_1\":\"address_1\",\n    \"address_2\": \"address_2\",\n    \"address_building\": \"address_building\",\n    \"address_street\": \"address_street\",\n    \"address_place\": \"address_place\",\n    \"address_city\": \"address_city\",\n    \"address_state\": \"address_state\",\n    \"address_country\": \"address_country\",\n    \"address_pincode\": \"address_pincode\",\n    \"address_lat\": -9.9827,\n    \"address_long\": 76.2779,\n    \"verification_doc\": \"verification_doc\",\n    \"isPrimary\": false\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "39ce56d1-8847-4558-8bf5-e46576fc5903",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "ab867941-c4e7-44b3-8894-6b3738a3ac80",
+    "name": "deleteVehicleAddressById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 100000,
+    "created": "2022-08-15T10:39:49.000Z",
+    "modified": "2022-08-15T10:40:57.401Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation deleteVehicleAddressById ($vehicleAddressId: String!) {\n    deleteVehicleAddressById (vehicleAddressId: $vehicleAddressId) {\n        status\n    \t\tmessage\n    }\n}",
+        "variables": "{\n    \"vehicleAddressId\": \"62fa1f4364b217c1db2c1dac\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "5ba39890-0121-4a9b-b152-cacecc9398c3",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "ab867941-c4e7-44b3-8894-6b3738a3ac80",
+    "name": "deleteVehicleOwnerAddressById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 110000,
+    "created": "2022-08-15T11:30:52.391Z",
+    "modified": "2022-08-15T11:31:48.069Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation deleteVehicleOwnerAddressById ($vehicleAddressId: String!) {\n    deleteVehicleOwnerAddressById (vehicleAddressId: $vehicleAddressId) {\n        status\n    \t\tmessage\n    }\n}",
+        "variables": "{\n    \"vehicleAddressId\": \"62fa1f4364b217c1db2c1dac\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "ed80416d-a7d1-45ee-b23c-abc63d64189d",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "ab867941-c4e7-44b3-8894-6b3738a3ac80",
+    "name": "updateVehicleAddressById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 120000,
+    "created": "2022-08-15T11:42:46.317Z",
+    "modified": "2022-08-15T11:43:40.492Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation updateVehicleAddressById($vehicleAddressId: String!,$payload: VehicleAddressDto!) {\n    updateVehicleAddressById (vehicleAddressId:$vehicleAddressId,payload: $payload) {\n    \t\taddress_title\n      \taddress_1\n      \taddress_2\n      \taddress_building\n      \taddress_street\n      \taddress_place\n      \taddress_city\n      \taddress_state\n      \taddress_country\n      \taddress_pincode\n      \taddress_subcategory\n      \tlocation{\n          coordinates\n        }\n    }\n}",
+        "variables": "{\n  \"vehicleAddressId\": \"62c43cf881319f360a1fee64\",\n  \"payload\": {\n    \"address_title\":\"NEWTITLEchange\",\n    \"address_subcategory\":\"home\",\n    \"address_1\":\"NEWaddress_1change\",\n    \"address_2\": \"NEWaddress_2\",\n    \"address_building\": \"NEWaddress_building\",\n    \"address_street\": \"NEWaddress_street\",\n    \"address_place\": \"NEWaddress_place\",\n    \"address_city\": \"NEWaddress_city\",\n    \"address_state\": \"address_state\",\n    \"address_country\": \"NEWaddress_country\",\n    \"address_pincode\": \"address_pincode\",\n    \"address_lat\": -20.9827,\n    \"address_long\": 20.2779,\n    \"verification_doc\": \"NEWverification_doc\",\n    \"isPrimary\": true\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "d8dae017-7d9e-40bd-88b1-8667ab9c362e",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "ab867941-c4e7-44b3-8894-6b3738a3ac80",
+    "name": "setAsVehiclePrimaryAddress",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 130000,
+    "created": "2022-08-15T11:48:13.052Z",
+    "modified": "2022-08-15T11:48:56.249Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation setAsVehiclePrimaryAddress ($vehicleAddressId: String!) {\n    setAsVehiclePrimaryAddress (vehicleAddressId: $vehicleAddressId) {\n        address_title\n      \taddress_1\n      \taddress_2\n      \taddress_building\n      \taddress_street\n      \taddress_place\n      \taddress_city\n      \taddress_state\n      \taddress_country\n      \taddress_pincode\n      \taddress_subcategory\n      \tlocation{\n          coordinates\n        }\n    }\n}",
+        "variables": "{\n    \"vehicleAddressId\": \"62c43a98c41307cc45965933\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "cc69d31d-d2ad-425a-bb63-402960776f32",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "ab867941-c4e7-44b3-8894-6b3738a3ac80",
+    "name": "getVehicleAllAddresses",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 140000,
+    "created": "2022-08-15T11:55:28.018Z",
+    "modified": "2022-08-15T11:56:15.675Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "query getVehicleAllAddresses{\n    getVehicleAllAddresses{\n        _id\n      \taddress_title\n      \taddress_1\n      \taddress_2\n      \taddress_building\n      \taddress_street\n      \taddress_place\n      \taddress_city\n      \taddress_state\n      \taddress_country\n      \taddress_pincode\n      \taddress_subcategory\n      \tlocation{\n          coordinates\n        }\n    }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "b380a3d8-1773-4df4-8620-b01db6939e10",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "58232629-59f7-4708-9d46-2ca6a376e931",
+    "name": "addVehicleContact",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 160000,
+    "created": "2022-08-15T12:11:21.498Z",
+    "modified": "2022-08-15T12:12:02.498Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addVehicleContact($payload: VehicleContactDto!) {\n    addVehicleContact (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"contact_title\": \"contact_title\",\n    \"contact_type\": \"phone\",\n    \"contact_subcategory\": \"home\",\n    \"phone_number\": \"9876543210\",\n    \"isPrimary\": false\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "e7ac99f4-7448-4521-9c28-a9268eb05378",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "58232629-59f7-4708-9d46-2ca6a376e931",
+    "name": "addVehicleOwnerContact",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 170000,
+    "created": "2022-08-15T12:12:25.800Z",
+    "modified": "2022-08-15T12:13:08.870Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addVehicleOwnerContact($payload: VehicleContactDto!) {\n    addVehicleOwnerContact (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"contact_title\": \"contact_title\",\n    \"contact_type\": \"phone\",\n    \"contact_subcategory\": \"home\",\n    \"phone_number\": \"9876543210\",\n    \"isPrimary\": false\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "7a070449-4b00-491b-90b2-e759137b2c48",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "58232629-59f7-4708-9d46-2ca6a376e931",
+    "name": "deleteVehicleContactById",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 180000,
+    "created": "2022-08-15T12:15:49.871Z",
+    "modified": "2022-08-15T12:16:32.593Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation deleteVehicleContactById ($vehicleContactId: String!) {\n    deleteVehicleContactById (vehicleContactId: $vehicleContactId) {\n        status\n    \t\tmessage\n    }\n}",
+        "variables": "{\n    \"vehicleContactId\": \"62f68243f5f9b2e6598c9ec6\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "3a5505cc-028d-41a8-abfc-306a47c6c877",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "58232629-59f7-4708-9d46-2ca6a376e931",
+    "name": "getVehicleAllContacts",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 190000,
+    "created": "2022-08-15T12:17:47.604Z",
+    "modified": "2022-08-15T12:18:29.744Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "query getVehicleAllContacts{\n    getVehicleAllContacts{\n        _id\n      \tcontact_title\n    \t\tcontact_type\n    \t\tcontact_subcategory\n    \t\tphone_number\n    \t\tisPrimary\n    }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "6c9c9bd9-9f3c-4296-be5a-2f23c0ca6aa5",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "58232629-59f7-4708-9d46-2ca6a376e931",
+    "name": "setAsVehiclePrimaryContact",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 200000,
+    "created": "2022-08-15T12:22:05.839Z",
+    "modified": "2022-08-15T12:22:53.134Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation setAsVehiclePrimaryContact ($vehicleContactId: String!,$vehicleContactType: String!) {\n    setAsVehiclePrimaryContact (vehicleContactId: $vehicleContactId,vehicleContactType: $vehicleContactType) {\n        _id\n      \tcontact_title\n    \t\tcontact_type\n    \t\tcontact_subcategory\n    \t\tphone_number\n    \t\tisPrimary\n    }\n}",
+        "variables": "{\n    \"vehicleContactId\": \"62c43a98c41307cc45965933\",\n    \"vehicleContactType\": \"email\"\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "159c4491-ce18-4c03-9ffb-beea311c344e",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "407768bd-1f6f-48a2-8f53-a7245959de0c",
+    "name": "completeVehicleOwnerProfile",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 210000,
+    "created": "2022-09-03T02:53:54.871Z",
+    "modified": "2022-09-04T14:19:41.250Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation completeVehicleOwnerProfile($payload: VehicleOwnerDto!) {\n    completeVehicleOwnerProfile (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"photo\": \"photo_path_url\",\n    \"name\":{\n    \"firstName\":\"Lijo\",\n    \"middleName\":\"\",\n    \"lastName\":\"John\"\n    },\n    \"email\":\"dev.lijojohn@gmail.com\",\n    \"phoneNumber\":\"9876543210\",\n    \"pan\": \"ASDFG2345Q\",\n    \"panDocPath\": \"/DFDFDFD.JPG\",\n    \"address\": {\n        \"address_title\":\"title\",\n    \t\t\"address_subcategory\":\"home\",\n    \t\t\"address_1\":\"address_1\",\n    \t\t\"address_2\": \"address_2\",\n    \t\t\"address_building\": \"address_building\",\n    \t\t\"address_street\": \"address_street\",\n    \t\t\"address_place\": \"address_place\",\n    \t\t\"address_city\": \"address_city\",\n    \t\t\"address_state\": \"address_state\",\n    \t\t\"address_country\": \"address_country\",\n        \"address_pincode\": \"address_pincode\",\n        \"address_lat\": -9.9827,\n    \t\t\"address_long\": 76.2779,\n    \t\t\"verification_doc\": \"verification_doc\",\n    \t\t\"isPrimary\": false\n  \t\t},\n    \"isBusiness\": true,\n    \"businessInfo\": {\n      \t\"business_name\": \"BUSINESSNAME\",\n      \t\"gstin\": \"DFGGHLDKSLSK35KL4\",\n        \"pan\":\"DSFDSFDS4567L\",\n      \t\"is_same_address\": false,\n      \t\"business_address\": {\n        \t\"address_title\":\"title\",\n    \t\t\t\"address_subcategory\":\"business\",\n    \t\t\t\"address_1\":\"address_1\",\n    \t\t\t\"address_2\": \"address_2\",\n    \t\t\t\"address_building\": \"address_building\",\n    \t\t\t\"address_street\": \"address_street\",\n    \t\t\t\"address_place\": \"address_place\",\n    \t\t\t\"address_city\": \"address_city\",\n    \t\t\t\"address_state\": \"address_state\",\n    \t\t\t\"address_country\": \"address_country\",\n        \t\"address_pincode\": \"address_pincode\",\n        \t\"address_lat\": -9.9827,\n    \t\t\t\"address_long\": 76.2779,\n    \t\t\t\"verification_doc\": \"verification_doc\",\n    \t\t\t\"isPrimary\": false\n      }\n    },\n    \"vehicleDriverInfo\":{\n    \"name\":{\n    \"firstName\":\"DriverFNme\",\n    \"middleName\":\"\",\n    \"lastName\":\"LastNm\"\n    },\n    \"dob\": \"15-08-1993\",\n    \"doj\": \"12-09-2021\",\n    \"email\": \"driver@email.com\",\n    \"phoneNumber\": \"9878909876\",\n    \"license_number\": \"wesde2345ret\",\n    \"license_file_path\": \"filepath_license\",\n    \"photo\": \"photofilepath\",\n    \"pan\": \"wesade4567t\",\n    \"pan_file_path\": \"pan_filepath\",\n        \"address\": {\n        \"address_title\":\"title\",\n    \t\t\"address_subcategory\":\"home\",\n    \t\t\"address_1\":\"address_1\",\n    \t\t\"address_2\": \"address_2\",\n    \t\t\"address_building\": \"address_building\",\n    \t\t\"address_street\": \"address_street\",\n    \t\t\"address_place\": \"address_place\",\n    \t\t\"address_city\": \"address_city\",\n    \t\t\"address_state\": \"address_state\",\n    \t\t\"address_country\": \"address_country\",\n        \"address_pincode\": \"address_pincode\",\n        \"address_lat\": -9.9827,\n    \t\t\"address_long\": 76.2779,\n    \t\t\"verification_doc\": \"verification_doc\",\n    \t\t\"isPrimary\": false\n  \t\t}\n    },\n    \n    \"vehicleInfo\":{\n    \"vehicle_name\": \"ALPHINE TRAVELS\",\n    \"vehicle_reg_no\": \"KL 33 H 4422\",\n    \"chasis_no\": \"chasisnumber\",\n    \"make\": \"make_text\",\n    \"model\": \"model_number\",\n    \"rc_book_file_path\": \"rc_book_file_path\",\n    \"vehicle_type\": \"phone\",\n    \"photo\": \"photo_url\",\n    \"address\": {\n        \"address_title\":\"title\",\n    \t\t\"address_subcategory\":\"home\",\n    \t\t\"address_1\":\"address_1\",\n    \t\t\"address_2\": \"address_2\",\n    \t\t\"address_building\": \"address_building\",\n    \t\t\"address_street\": \"address_street\",\n    \t\t\"address_place\": \"address_place\",\n    \t\t\"address_city\": \"address_city\",\n    \t\t\"address_state\": \"address_state\",\n    \t\t\"address_country\": \"address_country\",\n        \"address_pincode\": \"address_pincode\",\n        \"address_lat\": -9.9827,\n    \t\t\"address_long\": 76.2779,\n    \t\t\"verification_doc\": \"verification_doc\",\n    \t\t\"isPrimary\": false\n  \t\t}\n  }\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MjE3MzU5MCwiZXhwIjoxNjYyMzUzNTkwfQ.XpHAdKOI6J7I2uZIx2By1ypTFolYm_HEIJe9Y0bMIeo"
+    },
+    "tests": []
+  },
+  {
+    "_id": "e964698d-1185-4c6a-b780-c90f3872ea2b",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "6155dad5-0f7e-4b37-87ba-d4f6e66726c4",
+    "name": "addVehicle",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 220000,
+    "created": "2022-09-04T13:16:16.046Z",
+    "modified": "2022-09-04T13:17:07.067Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addVehicle($payload: VehicleDto!) {\n    addVehicle (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"vehicle_name\": \"ALPHINE TRAVELS\",\n    \"vehicle_reg_no\": \"KL 33 H 4422\",\n    \"chasis_no\": \"chasisnumber\",\n    \"make\": \"make_text\",\n    \"model\": \"model_number\",\n    \"rc_book_file_path\": \"rc_book_file_path\",\n    \"vehicle_type\": \"phone\",\n    \"photo\": \"photo_url\",\n    \"address\": {\n        \"address_title\":\"title\",\n    \t\t\"address_subcategory\":\"home\",\n    \t\t\"address_1\":\"address_1\",\n    \t\t\"address_2\": \"address_2\",\n    \t\t\"address_building\": \"address_building\",\n    \t\t\"address_street\": \"address_street\",\n    \t\t\"address_place\": \"address_place\",\n    \t\t\"address_city\": \"address_city\",\n    \t\t\"address_state\": \"address_state\",\n    \t\t\"address_country\": \"address_country\",\n        \"address_pincode\": \"address_pincode\",\n        \"address_lat\": -9.9827,\n    \t\t\"address_long\": 76.2779,\n    \t\t\"verification_doc\": \"verification_doc\",\n    \t\t\"isPrimary\": false\n  \t\t}\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  },
+  {
+    "_id": "73258e96-fbf0-452a-aefe-a6259fce8148",
+    "colId": "b078631f-ee0e-4d39-a13d-5a6d39e65915",
+    "containerId": "b14ef1d3-ca29-44b2-9af2-a20ca53012dc",
+    "name": "addVehicleDriver",
+    "url": "http://localhost:3000/graphql",
+    "method": "POST",
+    "sortNum": 240000,
+    "created": "2022-09-04T16:46:40.769Z",
+    "modified": "2022-09-04T16:47:35.626Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "graphql",
+      "raw": "",
+      "form": [],
+      "graphql": {
+        "query": "mutation addVehicleDriver($payload: VehicleDriverDto!) {\n    addVehicleDriver (payload: $payload) {\n    \t\tmessage\n    \t\tstatus\n    }\n}",
+        "variables": "{\n  \"payload\": {\n    \"name\":{\n    \"firstName\":\"DriverFNme\",\n    \"middleName\":\"\",\n    \"lastName\":\"LastNm\"\n    },\n    \"dob\": \"15-08-1993\",\n    \"doj\": \"12-09-2021\",\n    \"email\": \"driver@email.com\",\n    \"phoneNumber\": \"9878909876\",\n    \"license_number\": \"wesde2345ret\",\n    \"license_file_path\": \"filepath_license\",\n    \"photo\": \"photofilepath\",\n    \"pan\": \"wesade4567t\",\n    \"pan_file_path\": \"pan_filepath\",\n        \"address\": {\n        \"address_title\":\"title\",\n    \t\t\"address_subcategory\":\"home\",\n    \t\t\"address_1\":\"address_1\",\n    \t\t\"address_2\": \"address_2\",\n    \t\t\"address_building\": \"address_building\",\n    \t\t\"address_street\": \"address_street\",\n    \t\t\"address_place\": \"address_place\",\n    \t\t\"address_city\": \"address_city\",\n    \t\t\"address_state\": \"address_state\",\n    \t\t\"address_country\": \"address_country\",\n        \"address_pincode\": \"address_pincode\",\n        \"address_lat\": -9.9827,\n    \t\t\"address_long\": 76.2779,\n    \t\t\"verification_doc\": \"verification_doc\",\n    \t\t\"isPrimary\": false\n  \t\t}\n  }\n}"
+      }
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNJZCI6ImMxMzRhNTQxLTk4NDMtNGRhZC05MjBmLWU0ZDI1NGUwNTcwNyIsInVzZXJJZCI6IjYyZjkwZDU5ZTBkZTk0YjA4NGY1YTUyZiIsInJvbGUiOiJ2ZWhpY2xlb3duZXIiLCJ2ZXJzaW9uIjoxLCJ0b2tlblR5cGUiOiJhY2Nlc3NUb2tlbiIsImlhdCI6MTY2MDU1ODYxOCwiZXhwIjoxNjYwNzM4NjE4fQ.prqJbysfPRNH2FqL_0kggQCZzA2l3EL6izb1VOWXFwc"
+    },
+    "tests": []
+  }
+]

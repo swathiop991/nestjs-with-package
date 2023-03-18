@@ -1,0 +1,12 @@
+root/node_modules/*
+.eslintrc.js
+
+
+# testing
+/coverage
+
+# production
+/dist
+
+# misc
+.env
